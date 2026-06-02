@@ -1,9 +1,9 @@
-# Antigravity 持续汉化插件 / Antigravity Persistent Localization Patch
+# Antigravity 2.0 持续汉化插件 / Antigravity 2.0 Persistent Localization Patch
 
 [English version below](#english-version)
 
 ## 📖 项目简介
-本项目是专为 **Antigravity** 提供的一个无感、持续更新的中文汉化插件。
+本项目是专为 **Antigravity 2.0** 提供的一个无感、持续更新的中文汉化插件。
 由于官方应用在升级时会直接覆盖底层包（`app.asar`），常规汉化极易失效。本插件通过 macOS 原生的 `LaunchAgent` 守护进程，实现了**全自动化**的文件监控和修补。无论官方何时升级，插件都能在后台数秒内为你重新注入中文环境并重启应用，真正做到“一次安装，终生有效”。
 
 ## 🚀 安装与使用指南
@@ -37,7 +37,7 @@ cd "/path/to/antigravity 汉化插件"
 <h2 id="english-version">🇬🇧 English Version</h2>
 
 ## 📖 Introduction
-This project provides a persistent Chinese localization patch for **Antigravity**.
+This project provides a persistent Chinese localization patch for **Antigravity 2.0**.
 Because official updates overwrite the core `app.asar` file, conventional patches are easily lost. This plugin utilizes a native macOS `LaunchAgent` daemon to monitor the app's directory. Whenever an update occurs, the daemon automatically unpacks, injects the translation patch, and restarts the application within seconds, providing a truly "install once, run forever" experience.
 
 ## 🚀 Installation & Usage
