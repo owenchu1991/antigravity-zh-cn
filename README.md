@@ -62,8 +62,8 @@ cd "/path/to/antigravity-zh-cn"
 ```
 
 ## 📸 Screenshots
-*(Please insert your before/after screenshots here later)*
-![Screenshot 1](YOUR_SCREENSHOT_PATH_HERE.png)
+<img width="2018" height="1338" alt="image" src="https://github.com/user-attachments/assets/e3adce73-a8cd-40e4-bcd2-3f654acbcb52" />
+<img width="1316" height="526" alt="image" src="https://github.com/user-attachments/assets/4e611486-acab-47d6-89ad-3ec0f8c75e31" />
 
 ---
 
