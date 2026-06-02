@@ -28,8 +28,9 @@ cd "/path/to/antigravity 汉化插件"
 ```
 
 ## 📸 效果截图 (Screenshots)
-*(请稍后在此处插入汉化前后的对比截图)*
-![效果截图 1](YOUR_SCREENSHOT_PATH_HERE.png)
+<img width="2018" height="1338" alt="image" src="https://github.com/user-attachments/assets/e3adce73-a8cd-40e4-bcd2-3f654acbcb52" />
+<img width="1316" height="526" alt="image" src="https://github.com/user-attachments/assets/4e611486-acab-47d6-89ad-3ec0f8c75e31" />
+
 
 ---
 
