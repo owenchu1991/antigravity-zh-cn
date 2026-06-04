@@ -208,6 +208,15 @@ const TRANSLATIONS = {
   "Configure the browser subagent. It requires ": "配置浏览器子 Agent。要求系统已安装 ",
   " to be installed. The browser subagent can be invoked by typing /browser in the conversation input box.": "。你可以通过在对话输入框中键入 /browser 来调用浏览器子 Agent。",
 
+  // App Page
+  "Manage application settings.": "管理应用程序设置。",
+  "Prevent Sleep": "防止系统休眠",
+  "Prevent the computer from sleeping while the app is running.": "在应用运行时防止计算机休眠。",
+  "Keep In Menu Bar": "保持在菜单栏显示",
+  "The app will be accessible from the menu bar and will keep running in the background when all windows are closed.": "应用将保留在菜单栏中，并且在关闭所有窗口时继续在后台运行。",
+  "Notification Settings": "通知设置",
+  "To modify notification settings, open your operating system's system preferences.": "要修改通知设置，请打开操作系统的系统偏好设置。",
+
   // Editor Page Extra
   "Editor Settings": "编辑器设置",
   "Configure editor-specific behaviors and shortcuts.": "配置编辑器特有的行为和快捷键。",
