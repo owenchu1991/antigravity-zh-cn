@@ -360,7 +360,15 @@ const TRANSLATIONS = {
   "Go Forward": "前进下一页",
   "File Picker": "文件选择",
   "Select Previous Conversation": "选择上一个对话",
-  "Select Next Conversation": "选择下一个对话"
+  "Select Next Conversation": "选择下一个对话",
+  "Toggle Model Selector": "切换模型选择器",
+  "Toggle Voice Recording": "切换语音录制",
+  "Find in Pane": "在面板中查找",
+  "Toggle Sidebar": "切换侧边栏",
+  "Toggle Auxiliary Pane": "切换辅助面板",
+  "Zoom In": "放大",
+  "Zoom Out": "缩小",
+  "Reset Zoom": "重置缩放"
 };
 
 electron_1.contextBridge.exposeInMainWorld('__CHINESE_TRANSLATIONS__', TRANSLATIONS);
