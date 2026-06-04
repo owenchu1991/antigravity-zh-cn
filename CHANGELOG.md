@@ -1,0 +1,18 @@
+# 📝 更新日志 / Changelog
+
+## [2026-06-04] - 稳定性修复与全量页面汉化更新
+
+### 修复 (Fixes)
+- **核心修复**：修复了 macOS 系统下的 `Operation Not Permitted` 权限拦截报错。自动修补脚本 `auto_patch.sh` 中的移动指令 `mv` 已替换为更安全的 `cp`，彻底解决了 Antigravity 在自动升级后可能由于系统安全机制（Gatekeeper/SIP）导致 `app.asar` 丢失、应用无法启动的崩溃问题。
+
+### 新增 (Features & Translations)
+- **全面补全最新版 UI 汉化**：针对 Antigravity 最新版更新带来的大批新设置页面进行了汉化词条追加。
+  - **快捷键 (Shortcuts) 模块**：完整翻译了布局控制、视图切换、侧边栏管理等快捷键的说明。
+  - **浏览器 (Browser) 模块**：完整翻译了浏览器子 Agent (Browser subagent) 配置、JavaScript 执行策略以及浏览器安全操作的 URL 权限规则。
+  - **应用 (App) 模块**：完整翻译了后台防休眠 (Prevent Sleep)、系统菜单栏驻留 (Keep In Menu Bar) 和通知相关的偏好设置。
+
+---
+
+## [2026-05-29] - 初始版本发布 / Initial Release
+
+- **首发**：Antigravity 2.0 汉化插件正式发布，独创 macOS 本地守护进程 (`LaunchAgent`) 技术，实现应用覆盖升级后后台自动打补丁，提供真正“无感更新”的汉化体验。
