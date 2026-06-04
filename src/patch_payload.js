@@ -201,7 +201,12 @@ const TRANSLATIONS = {
   "Browser Settings": "浏览器设置",
   "Actuation Permissions": "操作权限",
   "Browser Actuation Rules": "浏览器操作规则",
-  "Configure allowed and denied URLs for browser actuation.": "配置允许和拒绝浏览器操作 of URL 模式。",
+  "Configure allowed and denied URLs for browser actuation.": "配置允许和拒绝浏览器操作的 URL 模式。",
+  "Browser Javascript Execution Policy": "浏览器 Javascript 执行策略",
+  "Controls whether the agent can run custom JavaScript to automate complex browser actions.": "控制 Agent 是否可以运行自定义 JavaScript 来自动执行复杂的浏览器操作。",
+  "Configure the browser subagent. It requires Google Chrome to be installed. The browser subagent can be invoked by typing /browser in the conversation input box.": "配置浏览器子 Agent。要求系统已安装 Google Chrome。你可以通过在对话输入框中键入 /browser 来调用浏览器子 Agent。",
+  "Configure the browser subagent. It requires ": "配置浏览器子 Agent。要求系统已安装 ",
+  " to be installed. The browser subagent can be invoked by typing /browser in the conversation input box.": "。你可以通过在对话输入框中键入 /browser 来调用浏览器子 Agent。",
 
   // Editor Page Extra
   "Editor Settings": "编辑器设置",
