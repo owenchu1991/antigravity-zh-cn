@@ -349,7 +349,18 @@ const TRANSLATIONS = {
   "Run": "运行",
   "Run (unsandboxed)": "在沙盒外运行",
   "Use": "使用",
-  "Access": "访问"
+  "Access": "访问",
+
+  // Shortcuts Page
+  "Keyboard shortcuts for quick navigation and control.": "用于快速导航和控制的键盘快捷键。",
+  "Open Conversation Picker": "打开对话选择",
+  "Open File Search": "打开文件搜索",
+  "Focus Input": "聚焦输入框",
+  "Go Back": "返回上一页",
+  "Go Forward": "前进下一页",
+  "File Picker": "文件选择",
+  "Select Previous Conversation": "选择上一个对话",
+  "Select Next Conversation": "选择下一个对话"
 };
 
 electron_1.contextBridge.exposeInMainWorld('__CHINESE_TRANSLATIONS__', TRANSLATIONS);
