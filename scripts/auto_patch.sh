@@ -47,7 +47,7 @@ fi
 # Now move the patched file into place.
 # We remove the old one first to avoid 'Operation not permitted' on overwrite of an executable/resource
 rm -f "$ASAR_FILE"
-mv "/tmp/app.asar.tmp" "$ASAR_FILE"
+cp "/tmp/app.asar.tmp" "$ASAR_FILE"
 
 if [ $? -ne 0 ]; then
     echo "$(date): Failed to replace $ASAR_FILE. Permission issue?"
