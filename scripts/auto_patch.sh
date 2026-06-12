@@ -29,7 +29,8 @@ fi
 cat "$PAYLOAD_FILE" >> "$TEMP_DIR/dist/preload.js"
 
 # Repack the asar file into /tmp to avoid any write locks in /Applications during packaging
-npx asar pack "$TEMP_DIR" "/tmp/app.asar.tmp"
+rm -f "/tmp/app.asar"
+npx asar pack "$TEMP_DIR" "/tmp/app.asar"
 
 # Clean up extraction dir
 rm -rf "$TEMP_DIR"
@@ -45,9 +46,8 @@ if pgrep -x "Antigravity" > /dev/null; then
 fi
 
 # Now move the patched file into place.
-# We remove the old one first to avoid 'Operation not permitted' on overwrite of an executable/resource
-rm -f "$ASAR_FILE"
-cp "/tmp/app.asar.tmp" "$ASAR_FILE"
+# Use Finder via AppleScript to safely replace the file, bypassing macOS App Management restrictions for background processes
+osascript -e 'tell application "Finder" to duplicate POSIX file "/tmp/app.asar" to POSIX file "/Applications/Antigravity.app/Contents/Resources/" with replacing'
 
 if [ $? -ne 0 ]; then
     echo "$(date): Failed to replace $ASAR_FILE. Permission issue?"
