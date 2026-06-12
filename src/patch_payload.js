@@ -392,6 +392,45 @@ const injectReactHook = () => {
   (function() {
     const TRANSLATIONS = ${JSON.stringify(TRANSLATIONS)};
     
+    // Load Dynamic Dictionary from LocalStorage
+    let DYNAMIC_DICT = {};
+    try {
+      const stored = localStorage.getItem('__ANTIGRAVITY_DYNAMIC_DICT__');
+      if (stored) {
+        DYNAMIC_DICT = JSON.parse(stored);
+      }
+    } catch(e) {}
+
+    const saveDynamicDict = () => {
+      try {
+        localStorage.setItem('__ANTIGRAVITY_DYNAMIC_DICT__', JSON.stringify(DYNAMIC_DICT));
+      } catch(e) {}
+    };
+
+    const pendingFetches = new Set();
+    const fetchTranslation = (text) => {
+      if (pendingFetches.has(text)) return;
+      pendingFetches.add(text);
+      
+      const url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=zh-CN&dt=t&q=" + encodeURIComponent(text);
+      fetch(url).then(res => res.json()).then(data => {
+        if (data && data[0] && data[0][0] && data[0][0][0]) {
+          const zh = data[0][0][0];
+          DYNAMIC_DICT[text] = zh;
+          saveDynamicDict();
+          console.log('[AutoTranslate] Successfully translated:', text, '->', zh);
+        }
+      }).catch(err => {
+        console.error('[AutoTranslate] Fetch error:', err);
+      });
+    };
+
+    const isEnglishUIString = (str) => {
+      if (str.length < 3) return false;
+      const alphaChars = (str.match(/[a-zA-Z]/g) || []).length;
+      return alphaChars > (str.length * 0.5);
+    };
+    
     const translate = (str) => {
       if (typeof str !== 'string') return str;
       const trimmed = str.trim();
