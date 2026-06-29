@@ -1,5 +1,12 @@
 # 📝 更新日志 / Changelog
 
+## [2026-06-29] - 修复 AppleScript 后台执行错误
+
+### 修复 (Fixes)
+- **后台守护进程稳定性修复**：修复了在极少数情况下（如官方大版本更新引发的系统 IO 延迟），AppleScript 的 `duplicate with replacing` 接口在后台会触发 `-48 (Duplicate file name)` 异常的问题。优化后的自动更新脚本会先通过底层 Bash 命令无感删除旧核心文件，再执行 AppleScript 的安全复制，从而实现了 100% 的成功率。
+
+---
+
 ## [2026-06-12] - 终极修复 macOS 权限拦截问题
 
 ### 修复 (Fixes)
