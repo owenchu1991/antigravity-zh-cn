@@ -37,17 +37,19 @@ rm -rf "$TEMP_DIR"
 
 # Check if Antigravity is running and kill it BEFORE replacing the file
 APP_WAS_RUNNING=0
-if pgrep -x "Antigravity" > /dev/null; then
+if pgrep -f "Antigravity.app" > /dev/null; then
     echo "$(date): Antigravity is running. Killing it to release file locks..."
     APP_WAS_RUNNING=1
-    pkill -9 -x "Antigravity"
+    pkill -9 -f "Antigravity.app"
     # Wait for the process to fully exit
     sleep 2
 fi
 
 # Now move the patched file into place.
+# We first remove the old file using bash to avoid AppleScript Error -48 (Duplicate file name)
+rm -f "$ASAR_FILE"
 # Use Finder via AppleScript to safely replace the file, bypassing macOS App Management restrictions for background processes
-osascript -e 'tell application "Finder" to duplicate POSIX file "/tmp/app.asar" to POSIX file "/Applications/Antigravity.app/Contents/Resources/" with replacing'
+osascript -e 'tell application "Finder" to duplicate POSIX file "/tmp/app.asar" to POSIX file "/Applications/Antigravity.app/Contents/Resources/"'
 
 if [ $? -ne 0 ]; then
     echo "$(date): Failed to replace $ASAR_FILE. Permission issue?"
